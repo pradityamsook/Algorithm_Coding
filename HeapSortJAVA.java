@@ -62,14 +62,20 @@ public class HeapSort
     // Driver program
     public static void main(String args[])
     {
-        int arr[] = {12, 11, 13, 5, 6, 7};
-        int n = arr.length;
+        for(int i= 0;  i<5; i++){
+            int arr[4];
+            Scanner i  = new Scanner(System.in);
+            System.out.println("insert element of array :");
+            i.nextInt;
+            //int arr[] = {12, 11, 13, 5, 6, 7};
+            int n = arr.length;
  
-        HeapSort ob = new HeapSort();
-        ob.sort(arr);
+            HeapSort ob = new HeapSort();
+            ob.sort(arr);
  
-        System.out.println("Sorted array is");
-        printArray(arr);
+            System.out.println("Sorted array is");
+            printArray(arr);
+        }
     }
 }
 
