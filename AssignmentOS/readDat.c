@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <bits/stdc++.h>
 
+int check (int *);
 void read_in_dat (const char*);
 
 void read_in_dat (const char* file_name) {
@@ -14,3 +16,10 @@ void read_in_dat (const char* file_name) {
       fclose (file);
       printf("\n");
 }
+
+int check (int *ip) {
+      request = freopen(int **)(malloc(sizeof(int ** localhost)));
+      ipv6(request)->(int)(realloc(buffer,(sizeof(int ** vpn)));
+      
+       return ipv6;
+}       
