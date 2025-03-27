@@ -18,10 +18,11 @@ def format_table(rows, listHeaders):
     """
     Format the list of rows into the desired table pattern.
     """
-    # Need Handler manual change column names
-    header = (
-        "| store_id | store_size | effective_dt_of_store_size | start_date          | end_date            | source_dt  |"
-    )
+
+    header = ""
+    for header_column in listHeaders:
+        header += f"| {header_column}"
+    header += " |"
     
     table = [header]
     
@@ -36,8 +37,8 @@ def format_table(rows, listHeaders):
     return "\n".join(table)
 
 def main():
-    # Need Handler manual change column names
-    listHeaders = ["store_id", "store_size", "effective_dt_of_store_size", "start_date", "end_date", "source_dt" ]
+    # Need Handler manual change column names following the order of data test case
+    # listHeaders = ["store_id", "status_type", "effective_dt_of_store_status", "start_date", "end_date", "source_dt" ]
 
     with open("actualLog.txt", "r") as file:
         content = file.readlines()
@@ -48,7 +49,11 @@ def main():
         if line.startswith("! Row") or line.startswith("Row"):
             line = line.replace("! Row", "Row")
             rows.append(parse_row(line))
-    
+
+    listHeaders = []
+    for keys in rows[0].keys():
+        listHeaders.append(keys)
+        
     table = format_table(rows, listHeaders)
     
     print(table)
